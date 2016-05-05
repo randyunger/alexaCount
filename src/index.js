@@ -42,7 +42,7 @@ var handleNextBusRequest = function(intent, session, response){
                   .PresentableDistance;
       var cardText = 'The next bus is: ' + text;
     } else {
-      var text = 'That bus stop does not exist.'
+      var text = 'That bus stop does not exist.';
       var cardText = text;
     }
 
@@ -94,3 +94,5 @@ exports.handler = function(event, context) {
     var skill = new BusSchedule();
     skill.execute(event, context);
 };
+
+exports.BusSchedule = BusSchedule;
