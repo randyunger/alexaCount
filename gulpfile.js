@@ -1,3 +1,5 @@
+// npm install browserify vinyl-source-stream gulp-zip
+
 'use strict';
 
 const browserify = require('browserify');
