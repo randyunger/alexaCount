@@ -1,10 +1,10 @@
 {
   "intents": [
     {
-      "intent": "CountIntent",
+      "intent": "GetNextBusIntent",
       "slots": [
         {
-          "name": "num",
+          "name": "bus",
           "type": "NUMBER"
         }
       ]

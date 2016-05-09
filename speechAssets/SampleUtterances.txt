@@ -1,59 +1,7 @@
-GetNextBusIntent get next bus for {three zero four four four two|bus}
-GetNextBusIntent get next scheduled bus for {three zero four four fiv six|bus}
-GetNextBusIntent get next arrival for {five zero eight nine zero five|bus}
-GetNextBusIntent get bus for {two zero eight nine seven nine|bus}
-GetNextBusIntent next bus for {three zero four four four two|bus}
-GetNextBusIntent next scheduled bus for {three zero four four fiv six|bus}
-GetNextBusIntent next arrival for {five zero eight nine zero five|bus}
-GetNextBusIntent bus for {two zero eight nine seven nine|bus}
-GetNextBusIntent get next bus at {three zero four four four two|bus}
-GetNextBusIntent get next scheduled bus at {three zero four four fiv six|bus}
-GetNextBusIntent get next arrival at {five zero eight nine zero five|bus}
-GetNextBusIntent get bus at {two zero eight nine seven nine|bus}
-GetNextBusIntent next bus at {three zero four four four two|bus}
-GetNextBusIntent next scheduled bus at {three zero four four fiv six|bus}
-GetNextBusIntent next arrival at {five zero eight nine zero five|bus}
-GetNextBusIntent bus at {two zero eight nine seven nine|bus}
-GetNextBusIntent get next bus {three zero four four four two|bus}
-GetNextBusIntent get next scheduled bus {three zero four four fiv six|bus}
-GetNextBusIntent get next arrival {five zero eight nine zero five|bus}
-GetNextBusIntent get bus {two zero eight nine seven nine|bus}
-GetNextBusIntent next bus {three zero four four four two|bus}
-GetNextBusIntent next scheduled bus {three zero four four fiv six|bus}
-GetNextBusIntent next arrival {five zero eight nine zero five|bus}
-GetNextBusIntent bus {two zero eight nine seven nine|bus}
-GetNextBusIntent find next bus at {three zero four four four two|bus}
-GetNextBusIntent find next scheduled bus at {three zero four four fiv six|bus}
-GetNextBusIntent find next arrival at {five zero eight nine zero five|bus}
-GetNextBusIntent find bus at {two zero eight nine seven nine|bus}
-GetNextBusIntent get next bus for {five|bus}
-GetNextBusIntent get next scheduled bus for {six eight|bus}
-GetNextBusIntent get next arrival for {seven nine five|bus}
-GetNextBusIntent get bus for {nine zero nine|bus}
-GetNextBusIntent next bus for {five|bus}
-GetNextBusIntent next scheduled bus for {six eight|bus}
-GetNextBusIntent next arrival for {seven nine five|bus}
-GetNextBusIntent bus for {nine zero nine|bus}
-GetNextBusIntent get next bus at {five|bus}
-GetNextBusIntent get next scheduled bus at {six eight|bus}
-GetNextBusIntent get next arrival at {seven nine five|bus}
-GetNextBusIntent get bus at {nine zero nine|bus}
-GetNextBusIntent next bus at {five|bus}
-GetNextBusIntent next scheduled bus at {six eight|bus}
-GetNextBusIntent next arrival at {seven nine five|bus}
-GetNextBusIntent bus at {nine zero nine|bus}
-GetNextBusIntent get next bus {five|bus}
-GetNextBusIntent get next scheduled bus {six eight|bus}
-GetNextBusIntent get next arrival {seven nine five|bus}
-GetNextBusIntent get bus {nine zero nine|bus}
-GetNextBusIntent next bus {five|bus}
-GetNextBusIntent next scheduled bus {six eight|bus}
-GetNextBusIntent next arrival {seven nine five|bus}
-GetNextBusIntent bus {nine zero nine|bus}
-GetNextBusIntent find next bus at {five|bus}
-GetNextBusIntent find next scheduled bus at {six eight|bus}
-GetNextBusIntent find next arrival at {seven nine five|bus}
-GetNextBusIntent find bus at {nine zero nine|bus}
+CountIntent to {five|num}
+CountIntent to {one hundred|num}
+CountIntent up to {five hundred|num}
+CountIntent up to {fifty|num}
 
 HelpIntent help
 HelpIntent help me
@@ -71,4 +19,3 @@ HelpIntent what do you do
 HelpIntent how do I use you
 HelpIntent how can I use you
 HelpIntent what can you tell me
-HelpIntent how do i find a bus

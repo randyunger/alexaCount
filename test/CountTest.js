@@ -1,6 +1,5 @@
 var assert = require('chai').assert
 var expect = require('chai').expect
-var bus = require('../src/index.js')
 var count = require('../src/count.js')
 var cmp = require("cmp")
 
@@ -14,28 +13,12 @@ describe('Array', function() {
     })
 })
 
-describe('Bus Sched', function() {
-    describe('something', function () {
-        it('should new', function () {
-            console.log("a test")
-            const newBus = new bus.BusSchedule()
-            assert.equal(newBus != undefined)
-        })
-        
-        // it('should count', function (){
-        //     console.log('testing counting')
-        //     const counter = new bus.BusSchedule()
-        //     const oneToTen = counter.from(1, 10)
-        // })
-    })
-})
-
 describe('Counter', function() {
-    describe('count from', function (){
+    describe('should count', function (){
         it('should new', function() {
             console.log("new counter")
             const counter = new count.Counter()
-            assert.true(counter != undefined)
+            assert.ok(counter != undefined)
         })
 
         it('should count to three by ones', function() {
@@ -101,6 +84,24 @@ describe('Counter', function() {
                 'eight million',
                 'nine million',
                 'ten million' ], out))
+        })
+
+        it('should count to eleven', function() {
+            console.log("new counter")
+            const counter = new count.Counter()
+            const out = counter.count(0, 11)
+            console.log(out)
+            assert.ok(cmp.eq([ 'one',
+                'two',
+                'three',
+                'four',
+                'five',
+                'six',
+                'seven',
+                'eight',
+                'nine',
+                'ten',
+                'eleven' ], out))
         })
 
     })

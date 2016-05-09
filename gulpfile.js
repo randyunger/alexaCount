@@ -19,7 +19,7 @@ gulp.task('js', function () {
     });
 
     return b.bundle()
-        .pipe(source('bundle.js'))
+        .pipe(source('index.js'))
         .pipe(gulp.dest('./dist/'));
 });
 
