@@ -61,6 +61,8 @@ exports.handler = function(event, context) {
   skill.execute(event, context);
 };
 
+exports.CountSkill = CountSkill
+
 // exports.handler = function(event, context) {
 //     var skill = new BusSchedule();
 //     skill.execute(event, context);

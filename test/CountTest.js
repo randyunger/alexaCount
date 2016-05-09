@@ -86,22 +86,14 @@ describe('Counter', function() {
                 'ten million' ], out))
         })
 
-        it('should count to eleven', function() {
+        it('should count to three, string arg', function() {
             console.log("new counter")
             const counter = new count.Counter()
-            const out = counter.count(0, 11)
+            const out = counter.count(0, "3", 1)
             console.log(out)
             assert.ok(cmp.eq([ 'one',
                 'two',
-                'three',
-                'four',
-                'five',
-                'six',
-                'seven',
-                'eight',
-                'nine',
-                'ten',
-                'eleven' ], out))
+                'three'], out))
         })
 
     })

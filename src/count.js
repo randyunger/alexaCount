@@ -22,7 +22,7 @@ Counter.prototype.enumerate = function(start, end, step){
     console.log("counting from "+ start + " to " + end + " by " + step)
 
     //range lib requires us to add one
-    const libEnd = end + 1
+    const libEnd = parseInt(end) + 1
 
     const numArray = range.range(start, libEnd, step)
 

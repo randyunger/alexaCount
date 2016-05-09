@@ -8,11 +8,24 @@ var intent = require('../src/index.js')
 var cmp = require("cmp")
 
 describe('Array', function() {
-    describe('#indexOf()', function () {
-        it('should return -1 when the value is not present', function () {
-            assert.equal(-1, [1,2,3].indexOf(5))
-            // assert.equal(, )
-            expect([1,2,3].indexOf(0)).to.equal(-1)
+    describe('intent', function () {
+
+        it('should handle count request', function () {
+
+            var alexaString = undefined
+
+            var mockResponse = {
+                tellWithCard: function(str){
+                    console.log("Alexa will say: " + str)
+                    alexaString = str
+                }
+            }
+
+            var skill = new intent.CountSkill()
+            skill.intentHandlers.CountIntent({slots:{num:{name:"num", value:"3"}}}, {}, mockResponse)
+
+            assert.equal(alexaString, "one, two, three")
+
         })
     })
 })
