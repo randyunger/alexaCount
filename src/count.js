@@ -17,22 +17,33 @@ Counter.prototype.count = function(start, end, step){
     return words
 }
 
+
+function dropInitialZero(arr) {
+    if(arr[0] === 0) {
+        arr.shift()
+        return arr
+    }
+    else return arr
+}
+
+function libStepF(step) {
+    if(step == undefined) {
+        return 1
+    } else {
+        return parseInt(step)
+    }
+}
+
 Counter.prototype.enumerate = function(start, end, step){
-    if(step == undefined) step = 1
-    console.log("counting from "+ start + " to " + end + " by " + step)
+
+    const libStep = libStepF(step)
 
     //range lib requires us to add one
     const libEnd = parseInt(end) + 1
 
-    const numArray = range.range(start, libEnd, step)
+    console.log("counting from "+ start + " to " + libEnd + " by " + libStep)
 
-    function dropInitialZero(arr) {
-        if(arr[0] === 0) {
-            arr.shift()
-            return arr
-        }
-        else return arr
-    }
+    const numArray = range.range(start, libEnd, libStep)
 
     const withoutInitialZero = dropInitialZero(numArray)
 

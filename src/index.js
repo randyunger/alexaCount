@@ -9,8 +9,10 @@ var handleCountRequest = function(intent, session, response){
   console.log("intent.slots is :")
   console.log(util.inspect(intent, {showHidden: false, depth: null}))
   
-  const num = intent.slots.num.value
-  const ints = new Counter().count(0, num, 1)
+  const endNum = intent.slots.num.value
+  var incNum = intent.slots.inc.value
+  if(incNum == undefined) incNum = 1
+  const ints = new Counter().count(0, endNum, incNum)
   
   const speech = ints.join()
   const heading = "Counting"
@@ -33,10 +35,12 @@ CountSkill.prototype.eventHandlers.onSessionStarted = function(sessionStartedReq
 CountSkill.prototype.eventHandlers.onLaunch = function(launchRequest, session, response){
   // This is when they launch the skill but don't specify what they want. Prompt
   // them for their bus stop
-  var output = 'Welcome to Count. ' +
-    'Say the number you want to count to.';
+  var output = 'Welcome to the counting game. ' +
+    'Which number do you want me to count to?';
 
-  var reprompt = 'Which number do you want to count to?';
+  var reprompt = 'Which number do you want me to count to? ' +
+      'You can also tell me how many to skip. For example, you could say ' +
+      'Alexa, count to 100 by tens.';
 
   response.ask(output, reprompt);
 
@@ -50,7 +54,7 @@ CountSkill.prototype.intentHandlers = {
   },
 
   HelpIntent: function(intent, session, response){
-    var speechOutput = 'Count to any number.' +
+    var speechOutput = 'I can count to any number. But if its too high it may take a while.' +
       'Which number would you like to count to?';
     response.ask(speechOutput);
   }

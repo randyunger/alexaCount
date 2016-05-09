@@ -1,17 +1,6 @@
 var assert = require('chai').assert
-var expect = require('chai').expect
 var count = require('../src/count.js')
 var cmp = require("cmp")
-
-describe('Array', function() {
-    describe('#indexOf()', function () {
-        it('should return -1 when the value is not present', function () {
-            assert.equal(-1, [1,2,3].indexOf(5))
-            // assert.equal(, )
-            expect([1,2,3].indexOf(0)).to.equal(-1)
-        })
-    })
-})
 
 describe('Counter', function() {
     describe('should count', function (){
@@ -94,6 +83,24 @@ describe('Counter', function() {
             assert.ok(cmp.eq([ 'one',
                 'two',
                 'three'], out))
+        })
+
+        it('should support skipping', function() {
+            const counter = new count.Counter()
+            const out = counter.count(0, "100", "10")
+            console.log(out)
+            assert.ok(cmp.eq(
+                [ 'ten',
+                    'twenty',
+                    'thirty',
+                    'forty',
+                    'fifty',
+                    'sixty',
+                    'seventy',
+                    'eighty',
+                    'ninety',
+                    'one hundred' ]
+                , out))
         })
 
     })

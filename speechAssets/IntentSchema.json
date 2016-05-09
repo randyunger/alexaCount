@@ -7,6 +7,10 @@
           "name": "num",
           "type": "NUMBER"
         }
+        ,{
+          "name": "inc",
+          "type": "NUMBER"
+        }
       ]
     },
     {

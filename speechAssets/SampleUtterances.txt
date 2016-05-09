@@ -1,7 +1,7 @@
-CountIntent to {five|num}
-CountIntent to {one hundred|num}
-CountIntent up to {five hundred|num}
-CountIntent up to {fifty|num}
+CountIntent {five|num}
+CountIntent {one hundred|num} by {fives|inc}
+CountIntent to {one hundred|num} by {tens|inc}
+CountIntent up to {one hundred|num} by {tens|inc}
 
 HelpIntent help
 HelpIntent help me
