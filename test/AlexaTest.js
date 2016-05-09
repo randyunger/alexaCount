@@ -24,7 +24,7 @@ describe('Array', function() {
             var skill = new intent.CountSkill()
             skill.intentHandlers.CountIntent({slots:{num:{name:"num", value:"3"}}}, {}, mockResponse)
 
-            assert.equal(alexaString, "one, two, three")
+            assert.equal(alexaString, "one,two,three")
 
         })
     })
