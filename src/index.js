@@ -12,11 +12,25 @@ var handleCountRequest = function(intent, session, response){
   const endNum = intent.slots.num.value
   var incNum = intent.slots.inc.value
   if(incNum == undefined) incNum = 1
-  const ints = new Counter().count(0, endNum, incNum)
-  
-  const speech = ints.join()
-  const heading = "Counting"
-  response.tellWithCard(speech, heading, speech);
+
+  //Check for a request that results in too many numbers to count
+  const distNumbers = endNum / incNum
+
+  const heading = "Counting Game"
+
+    if(distNumbers > 50) {
+
+      const errSpeech = "That's too many to count! Let's keep it to fifty or fewer numbers."
+
+      response.tellWithCard(errSpeech, heading, errSpeech);
+
+  } else {
+
+      const ints = new Counter().count(0, endNum, incNum)
+
+      const speech = ints.join(', ')
+      response.tellWithCard(speech, heading, speech);
+  }
 };
 
 var CountSkill = function(){
@@ -39,8 +53,9 @@ CountSkill.prototype.eventHandlers.onLaunch = function(launchRequest, session, r
     'Which number do you want me to count to?';
 
   var reprompt = 'Which number do you want me to count to? ' +
+      'I can count to any number less than one million. ' +
       'You can also tell me how many to skip. For example, you could say ' +
-      'Alexa, count to 100 by tens.';
+      'Alexa, count to one hundred by ten.';
 
   response.ask(output, reprompt);
 
@@ -54,8 +69,11 @@ CountSkill.prototype.intentHandlers = {
   },
 
   HelpIntent: function(intent, session, response){
-    var speechOutput = 'I can count to any number. But if its too high it may take a while.' +
-      'Which number would you like to count to?';
+    var speechOutput = 'I can count to any number less than one million. ' +
+        'You can also tell me how many to skip. For example, you could say ' +
+        'Alexa, count to one hundred by ten.' +
+        'But if you ask me to count too many numbers, I will get bored. ' +
+        'Which number would you like to count to?';
     response.ask(speechOutput);
   }
 };

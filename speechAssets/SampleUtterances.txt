@@ -2,6 +2,10 @@ CountIntent {five|num}
 CountIntent {one hundred|num} by {fives|inc}
 CountIntent to {one hundred|num} by {tens|inc}
 CountIntent up to {one hundred|num} by {tens|inc}
+CountIntent to count to {one hundred|num}
+CountIntent to count to {one hundred|num} by {tens|inc}
+CountIntent to count up to {one hundred|num}
+CountIntent to count up to {one hundred|num} by {tens|inc}
 
 HelpIntent help
 HelpIntent help me
